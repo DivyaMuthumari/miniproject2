@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+   
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Update Appointment</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">CVS Hospital Management</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Update Appointment</a>
+      </li>
+     
+    </ul>
+   
+  </div>
+</nav>
+
+<div class="container mt-4">
+    <h1 class="mb-4">Update Appointment Details</h1>
+    <form action="/addAppointment" method="post" th:object="${appointment}" class="needs-validation" novalidate>
+
+  <!-- Add hidden form field to handle update -->
+        <input type="hidden" th:field="*{Id}" />
+               
+
+        <div class="form-group">
+            <label for="doctorId">Doctor Id:</label>
+            <input type="text" class="form-control" id="doctorId" name="doctorId" required placeholder="Enter Doctor Id" th:field="*{doctorId}" />
+            
+        </div>
+
+        <div class="form-group">
+            <label for="doctorName">Doctor Name:</label>
+            <input type="text" class="form-control" id="doctorName" name="doctorName" required placeholder="Enter Doctor Name" th:field="*{doctorName}" />
+            
+        </div>
+        
+        <div class="form-group">
+            <label for="patientId">Patient Id:</label>
+            <input type="text" class="form-control" id="patientId" name="patientId" required placeholder="Enter Patient Id" th:field="*{patientId}" />
+            
+        </div>
+
+        <div class="form-group">
+            <label for="patientName">Patient Name:</label>
+            <input type="text" class="form-control" id="patientName" name="patientName" required placeholder="Enter Patient Name" th:field="*{patientName}" />
+            
+        </div>
+
+        <div class="form-group">
+           <label for="appointmentDate">Appointment Date:</label>
+            <input type="text" class="form-control" id="appointmentDate" name="appointmentDate" required placeholder="Enter Appointment Date in YYYY-MM-DD format" th:field="*{appointmentDate}" />
+            
+        </div>
+        
+        <div class="form-group">
+           <label for="visitReason">Visit Reason:</label>
+            <input type="text" class="form-control" id="visitReason" name="visitReason" required placeholder="Enter Visit Reason" th:field="*{visitReason}" />
+            
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form><br><br>
+
+    <a th:href="@{/viewAppointment}" class="btn btn-secondary">Back to Appointment List</a>
+</div>
+</body>
+</html>

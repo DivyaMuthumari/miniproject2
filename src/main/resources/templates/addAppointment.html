@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+   
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Add Appointment</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">CVS Hospital Management</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Add Appointment</a>
+      </li>
+     
+    </ul>
+   
+  </div>
+</nav>
+
+<div class="container mt-4">
+    <h1 class="mb-4">Add Appointment Details</h1>
+    <form action="/addAppointment" method="post" th:object="${Appointment}" class="needs-validation" novalidate>
+<!--  
+        <div class="form-group">
+            <label for="Id">Appointment Id:</label>
+            <input type="number" class="form-control" id="Id" name="Id" required placeholder="Enter Appointment Id" />
+            <div class="invalid-feedback">
+                Please enter a valid Appointment Id.
+            </div>
+        </div> -->
+
+        <div class="form-group">
+            <label for="doctorId">Doctor Id:</label>
+            <input type="text" class="form-control" id="doctorId" name="doctorId" required placeholder="Enter Doctor Id" />
+            <div class="invalid-feedback">
+                Please enter a valid Doctor Id.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="doctorName">Doctor Name:</label>
+            <input type="text" class="form-control" id="doctorName" name="doctorName" required placeholder="Enter Doctor Name" />
+            <div class="invalid-feedback">
+                Please enter a valid Doctor Name.
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="patientId">Patient Id:</label>
+            <input type="text" class="form-control" id="patientId" name="patientId" required placeholder="Enter Patient Id" />
+            <div class="invalid-feedback">
+                Please enter a valid Patient Id.
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="patientName">Patient Name:</label>
+            <input type="text" class="form-control" id="patientName" name="patientName" required placeholder="Enter Patient Name" />
+            <div class="invalid-feedback">
+                Please enter a valid Patient Name.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="appointmentDate">Appointment Date:</label>
+            <input type="text" class="form-control" id="appointmentDate" name="appointmentDate" required placeholder="Enter Appointment Date in YYYY-MM-DD format" />
+            <div class="invalid-feedback">
+                Please enter YYYY-MM-DD format.
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="visitReason">Visit Reason:</label>
+            <input type="text" class="form-control" id="visitReason" name="visitReason" required placeholder="Enter Visit Reason" />
+            <div class="invalid-feedback">
+                Please enter a visit Reason.
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form><br><br>
+
+    <a th:href="@{/viewAppointment}" class="btn btn-secondary">Back to Appointment List</a>
+</div>
+</body>
+</html>
